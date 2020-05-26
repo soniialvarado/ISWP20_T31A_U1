@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 public class Registration extends AppCompatActivity {
 
-    ConnectionMySQL SQL=new ConnectionMySQL();
+    ConnectionMySQL SQL=new ConnectionMySQL(this);
     Connection con;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
