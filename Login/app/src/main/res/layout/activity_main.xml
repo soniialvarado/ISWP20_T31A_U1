@@ -7,13 +7,14 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnLog"
         android:layout_width="124dp"
         android:layout_height="45dp"
         android:layout_marginStart="143dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="126dp"
+        android:onClick="onClick"
         android:text="@string/ingresar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,8 +28,8 @@
         android:layout_marginStart="99dp"
         android:layout_marginTop="319dp"
         android:layout_marginEnd="229dp"
-        android:text="@string/e_mail"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        android:text="Usuario"
+        app:layout_constraintBottom_toTopOf="@+id/txtUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,10 +43,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="230dp"
         android:text="@string/contrase_a"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/txtPass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUser" />
 
     <TextView
         android:id="@+id/lblRegistration"
@@ -57,14 +58,14 @@
         android:layout_marginBottom="13dp"
         android:onClick="onClick"
         android:text="@string/registrarse"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btnLog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPass" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="98dp"
@@ -79,7 +80,7 @@
         android:importantForAutofill="no" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="98dp"
