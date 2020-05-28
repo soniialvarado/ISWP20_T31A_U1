@@ -1,11 +1,27 @@
-Location locationA = new Location("punto A");
 
-    locationA.setLatitude(latA);
-    locationA.setLongitude(lngA);
+private void getLatLongFromAddress(String address)
+{
+    double lat= 0.0, lng= 0.0;
 
-    Location locationB = new Location("punto B");
+    Geocoder geoCoder = new Geocoder(this, Locale.getDefault());    
+    try 
+    {
+        List<Address> addresses = geoCoder.getFromLocationName(address , 1);
+        if (addresses.size() > 0) 
+        {            
+            GeoPoint p = new GeoPoint(
+                    (int) (addresses.get(0).getLatitude() * 1E6), 
+                    (int) (addresses.get(0).getLongitude() * 1E6));
 
-    locationB.setLatitude(latB);
-    locationB.setLongitude(lngB);
+            lat=p.getLatitudeE6()/1E6;
+            lng=p.getLongitudeE6()/1E6;
 
-    float distance = locationA.distanceTo(locationB);
+            Log.d("Latitude", ""+lat);
+            Log.d("Longitude", ""+lng);
+        }
+    }
+    catch(Exception e)
+    {
+        e.printStackTrace();
+    }
+}
