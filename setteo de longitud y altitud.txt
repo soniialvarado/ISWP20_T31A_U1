@@ -1,0 +1,11 @@
+Location locationA = new Location("punto A");
+
+    locationA.setLatitude(latA);
+    locationA.setLongitude(lngA);
+
+    Location locationB = new Location("punto B");
+
+    locationB.setLatitude(latB);
+    locationB.setLongitude(lngB);
+
+    float distance = locationA.distanceTo(locationB);
