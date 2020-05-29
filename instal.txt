@@ -1,0 +1,20 @@
+4. Add the JDK installation path to PATH (Windows only)
+Windows searches the current directory and the directories listed in the PATH environment variable (system variable) for executable programs.
+
+Open "Control Panel" -> "System" -> "Advanced system settings" -> "Environment Variables".
+Under "System variables", scroll down to select "Path" and click "Edit...".
+Append to the existing Path value a semi-colon ";" then the JDK's "bin" directory (e.g. ";C:\Program Files\Java\jdk-10.0.0\bin").
+
+
+Verify IntelliJ Installation
+Check that your IntelliJ is installed and up-to-date by following these steps below:
+
+To check whether you need to install JDK, in a terminal window, type:
+java -version
+javac -version
+If you do not have it, or do not have the latest version, download and install JDK.
+Install IntelliJ. This course uses IntelliJ and we recommend you use the same IDE.
+Start IntelliJ.
+Install any updates and additional content you are prompted for.
+Select IntelliJ IDEA -> Check for updates… until there are no more updates.
+
