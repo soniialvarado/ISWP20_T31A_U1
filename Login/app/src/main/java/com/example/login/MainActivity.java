@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView txtPass;
     TextView txtReg;
     Button btnLog;
-    ProgressDialog progreso;
     RequestQueue request;
     Boolean exist=false;
     JsonObjectRequest jsonObjectRequest;
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(exist){
                     Intent intent = new Intent(v.getContext(), User.class);
                     startActivityForResult(intent, 0);
-                    progreso.hide();
                 }
                 else if(!exist){
                     Toast toast=Toast.makeText(this,"Alguno de los datos es incorrecto",Toast.LENGTH_SHORT);
@@ -71,9 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
     public void login() {
-        progreso=new ProgressDialog(this);
-        progreso.setMessage("Cargando...");
-        progreso.show();
         String ip="https://ingsoftu1.000webhostapp.com/";
         String url=ip+"login_usuario.php?user="+txtUser.getText().toString() +"&pass="+txtPass.getText().toString();
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
@@ -82,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this,"No se pudo registrar",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Usuario incorrecto",Toast.LENGTH_SHORT).show();
         Log.i("ERROR",error.toString());
 
     }
